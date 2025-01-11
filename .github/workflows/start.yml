@@ -14,8 +14,11 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin' # Use 'temurin' for newer versions
+          distribution: 'temurin'
           java-version: '8'
+
+      - name: Grant execute permissions for Gradlew
+        run: chmod +x ./gradlew
 
       - name: Cache Gradle dependencies
         uses: actions/cache@v3
